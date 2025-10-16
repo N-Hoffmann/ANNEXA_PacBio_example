@@ -1,0 +1,277 @@
+oct.-16 10:27:53.282 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /Users/nhoffmann/github/ANNEXA -profile docker --input ../sample.txt --gtf ../chr1.gtf --fa ../chr1.fa --maxCpu 2 --maxMemory 8 -resume
+oct.-16 10:27:53.334 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.8
+oct.-16 10:27:53.352 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/nhoffmann/.nextflow/plugins; core-plugins: nf-amazon@2.15.0-patch2,nf-azure@1.16.0-patch1,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.1,nf-tower@1.11.4-patch2,nf-wave@1.12.1
+oct.-16 10:27:53.377 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+oct.-16 10:27:53.377 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+oct.-16 10:27:53.380 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+oct.-16 10:27:53.388 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+oct.-16 10:27:53.738 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/nhoffmann/github/ANNEXA/nextflow.config
+oct.-16 10:27:53.739 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/nhoffmann/github/ANNEXA/nextflow.config
+oct.-16 10:27:53.749 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/nhoffmann/.nextflow/secrets/store.json
+oct.-16 10:27:53.751 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@6d6bbd35] - activable => nextflow.secret.LocalSecretsProvider@6d6bbd35
+oct.-16 10:27:53.758 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+oct.-16 10:27:53.802 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [standard, slurm, test, conda, singularity, docker]
+oct.-16 10:27:53.822 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+oct.-16 10:27:53.833 [main] DEBUG nextflow.cli.CmdRun - Launching `/Users/nhoffmann/github/ANNEXA/main.nf` [cranky_plateau] DSL2 - revision: b6369eab64
+oct.-16 10:27:53.834 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-schema@2.0.0]
+oct.-16 10:27:53.834 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+oct.-16 10:27:53.834 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-schema@2.0.0]
+oct.-16 10:27:53.835 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-schema version: 2.0.0
+oct.-16 10:27:53.844 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-schema@2.0.0' resolved
+oct.-16 10:27:53.844 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-schema@2.0.0'
+oct.-16 10:27:53.849 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-schema@2.0.0
+oct.-16 10:27:53.882 [main] DEBUG nextflow.Session - Session UUID: 50bff11f-6571-4645-88b1-a9464dca81d7
+oct.-16 10:27:53.882 [main] DEBUG nextflow.Session - Run name: cranky_plateau
+oct.-16 10:27:53.882 [main] DEBUG nextflow.Session - Executor pool size: 8
+oct.-16 10:27:53.887 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+oct.-16 10:27:53.891 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+oct.-16 10:27:53.912 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.8 build 5956
+  Created: 06-10-2025 21:19 UTC (23:19 CEST)
+  System: Mac OS X 15.6.1
+  Runtime: Groovy 4.0.26 on Java HotSpot(TM) 64-Bit Server VM 21.0.4+8-LTS-274
+  Encoding: UTF-8 (UTF-8)
+  Process: 14113@ar155057 [129.20.155.57]
+  CPUs: 8 - Mem: 16 GB (158.6 MB) - Swap: 0 (0)
+oct.-16 10:27:53.924 [main] DEBUG nextflow.Session - Work-dir: /Users/nhoffmann/Projets/pacbio/run/work [Mac OS X]
+oct.-16 10:27:53.949 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+oct.-16 10:27:53.955 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+oct.-16 10:27:53.958 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+oct.-16 10:27:53.971 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+oct.-16 10:27:53.977 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+oct.-16 10:27:54.033 [main] DEBUG nextflow.Session - Session start
+oct.-16 10:27:54.306 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+oct.-16 10:27:54.313 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsHelp:paramsHelp]; plugin Id: nf-schema
+oct.-16 10:27:54.349 [main] INFO  nextflow.Nextflow - -[2m-------------------------------------[0m-
+[0;32m    ___    _   ___   _________  __ ___
+   /   |  / | / / | / / ____/ |/ //   |
+  / /| | /  |/ /  |/ / __/  |   // /| |
+ / ___ |/ /|  / /|  / /___ /   |/ ___ |
+/_/  |_/_/ |_/_/ |_/_____//_/|_/_/  |_|
+                                       [0m
+-[2m-------------------------------------[0m-
+[0;35mgithub.com/igdrion/ANNEXA[0m
+ANNEXA version        : 3.2.6
+---
+Reference Annotation  : ../chr1.gtf
+Reference Genome      : ../chr1.fa
+Input Samplesheet     : ../sample.txt
+---
+Transcript discovery  : bambu
+Filtering             : false
+Tfkmers Model         : null
+Tfkmers Tokenizer     : null
+Tfkmers Threshold     : 0.2
+Bambu Threshold       : 0.2
+Bambu Single Exons    : true
+Bambu Recommended NDR : false
+Filtering operation   : intersection
+Stranded              : true
+-[2m-------------------------------------[0m-
+
+oct.-16 10:27:54.350 [main] WARN  nextflow.Nextflow - You are using Bambu as the transcript discovery tool. Please note that Bambu takes by default strandedness into account.
+  Bambu using strandedness: true. Please verifiy that it corresponds to your sequencing protocol.
+  You can change strandedness mode using the --bambu_strand parameter (options: true or false).
+  
+oct.-16 10:27:55.208 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.208 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.212 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+oct.-16 10:27:55.217 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=16 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+oct.-16 10:27:55.218 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+oct.-16 10:27:55.230 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VALIDATE_INPUT_GTF': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.248 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.248 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.249 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'INDEX_BAM': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.265 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.265 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.265 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BAMBU': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.270 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.270 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.271 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GFFCOMPARE': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.274 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.274 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.275 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'RESTRAND_ISOFORMS': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.277 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.277 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.278 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SPLIT_EXTENDED_ANNOTATION': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.282 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.282 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.282 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FEELNC_CODPOT': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.285 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.285 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.286 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FEELNC_FORMAT': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.289 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.289 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.289 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'RESTORE_BIOTYPE': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.292 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.293 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.293 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MERGE_NOVEL': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.297 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.297 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.297 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRANSDECODER:TRANSDECODER_PREDICT': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.300 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.300 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.301 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRANSDECODER:FORMAT_TRANSDECODER': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.303 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.303 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.303 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRANSDECODER:AGAT_CONVERTSPGFF2GTF': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.307 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.307 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.307 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRANSDECODER:GTFSORT': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.310 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.310 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.311 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'RESTRAND_NOVEL': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.316 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.316 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.317 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'QC_FULL:MERGE_ANNOTATIONS': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.321 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.321 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.322 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'QC_FULL:REPORT': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.328 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct.-16 10:27:55.329 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct.-16 10:27:55.329 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'ADD_CLASS_CODE': maxForks=0; fair=false; array=0
+oct.-16 10:27:55.332 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: BAMBU, MERGE_COUNTS, RESTRAND_ISOFORMS_BAMBU, EXTRACT_TSS_SEQUENCES, MERGE, GFFCOMPARE, FEELNC_FORMAT, SPLIT_EXTENDED_ANNOTATION, RESTORE_BIOTYPE, RESTRAND_ISOFORMS_STRINGTIE, QC_FULL:REPORT, TRANSDECODER_PREDICT, QUANTIFY, PREPARE_RSEQC, FORMAT_GFFCOMPARE, EXTRACT_TSS_REGIONS, READ_LENGTH, FORMAT_TRANSDECODER, AGAT_CONVERTSPGFF2GTF, RESTRAND_NOVEL, FILTER, GTFSORT, RESTRAND_ISOFORMS, TRANSDECODER:GTFSORT, INDEX_BAM, REPORT, FEELNC_CODPOT, MERGE_ANNOTATIONS, EXTRACT_QUANTS, QC_FULL:MERGE_ANNOTATIONS, ADD_CLASS_CODE, VALIDATE_INPUT_GTF, GTF_TO_GENEPRED, GENEBODY_COVERAGE, PREDICT, REFORMAT_MERGED_TOOLS, ASSEMBLE, MERGE_TOOLS, TRANSDECODER:AGAT_CONVERTSPGFF2GTF, TRANSDECODER:TRANSDECODER_PREDICT, MERGE_NOVEL, TRANSDECODER:FORMAT_TRANSDECODER, GENEPRED_TO_BED
+oct.-16 10:27:55.333 [main] DEBUG nextflow.Session - Igniting dataflow network (19)
+oct.-16 10:27:55.336 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VALIDATE_INPUT_GTF
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INDEX_BAM
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BAMBU
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GFFCOMPARE
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RESTRAND_ISOFORMS
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SPLIT_EXTENDED_ANNOTATION
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FEELNC_CODPOT
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FEELNC_FORMAT
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RESTORE_BIOTYPE
+oct.-16 10:27:55.337 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MERGE_NOVEL
+oct.-16 10:27:55.338 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRANSDECODER:TRANSDECODER_PREDICT
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRANSDECODER:FORMAT_TRANSDECODER
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRANSDECODER:AGAT_CONVERTSPGFF2GTF
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRANSDECODER:GTFSORT
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RESTRAND_NOVEL
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QC_FULL:MERGE_ANNOTATIONS
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > QC_FULL:REPORT
+oct.-16 10:27:55.339 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ADD_CLASS_CODE
+oct.-16 10:27:55.340 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_feba51ffacb57aa8: /Users/nhoffmann/github/ANNEXA/modules/transforkmers/workflow.nf
+  Script_1fd2ec92cdc2ce7d: /Users/nhoffmann/github/ANNEXA/modules/qc/report.nf
+  Script_2584351f085c1430: /Users/nhoffmann/github/ANNEXA/modules/rseqc/prepare.nf
+  Script_1b83ff37222fc5ec: /Users/nhoffmann/github/ANNEXA/modules/merge_tools.nf
+  Script_037770f9a13b513a: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_assemble.nf
+  Script_52d579d8521e6185: /Users/nhoffmann/github/ANNEXA/modules/restrand_isoforms.nf
+  Script_e6e3389d9e7a2e00: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_quant.nf
+  Script_c78f8ab692e5dc93: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_format_gffcompare.nf
+  Script_e102f8e3f19cf8b9: /Users/nhoffmann/github/ANNEXA/modules/rseqc/genepredtobed.nf
+  Script_45ca50b6486a706f: /Users/nhoffmann/github/ANNEXA/modules/split_extended_annotation.nf
+  Script_35c3521acf769794: /Users/nhoffmann/github/ANNEXA/modules/qc/workflow.nf
+  Script_9a22e261a7924dc1: /Users/nhoffmann/github/ANNEXA/modules/transdecoder/convert_to_gtf.nf
+  Script_da5992694ca6060a: /Users/nhoffmann/github/ANNEXA/modules/index_bam.nf
+  Script_7dfb889ba2db5eb7: /Users/nhoffmann/github/ANNEXA/modules/header.nf
+  Script_3e43b11e28bcb185: /Users/nhoffmann/github/ANNEXA/main.nf
+  Script_6d4957b12a1f69f1: /Users/nhoffmann/github/ANNEXA/modules/transforkmers/extract_regions.nf
+  Script_db0ce94d221cf6f9: /Users/nhoffmann/github/ANNEXA/modules/merge_novel.nf
+  Script_a3510d862011f18d: /Users/nhoffmann/github/ANNEXA/modules/input/validate.nf
+  Script_6e2b89b908a884ea: /Users/nhoffmann/github/ANNEXA/modules/transdecoder/format_transdecoder.nf
+  Script_a8d60b53179aa545: /Users/nhoffmann/github/ANNEXA/modules/rseqc/workflow.nf
+  Script_3a3bc76113bcdc94: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_extract_counts.nf
+  Script_344f601e4ada5aef: /Users/nhoffmann/github/ANNEXA/modules/rseqc/gene_body_coverage.nf
+  Script_cde93bf065c2cfa9: /Users/nhoffmann/github/ANNEXA/modules/merge_counts.nf
+  Script_65265ca68cfedd7f: /Users/nhoffmann/github/ANNEXA/modules/transforkmers/extract_sequences.nf
+  Script_70a567168341d2bf: /Users/nhoffmann/github/ANNEXA/modules/transdecoder/transdecoder_predict.nf
+  Script_465fab391d87b033: /Users/nhoffmann/github/ANNEXA/modules/transforkmers/filter.nf
+  Script_20f6a0f39c7041d9: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_merge.nf
+  Script_c1272fefd334e44c: /Users/nhoffmann/github/ANNEXA/modules/qc/merge_known_novel.nf
+  Script_d684f95933f30a33: /Users/nhoffmann/github/ANNEXA/modules/bambu/bambu.nf
+  Script_a426fb7137964118: /Users/nhoffmann/github/ANNEXA/modules/transdecoder/gtfsort.nf
+  Script_d98c9927d56742a8: /Users/nhoffmann/github/ANNEXA/modules/rseqc/gtftogenepred.nf
+  Script_2967163a4497cdb7: /Users/nhoffmann/github/ANNEXA/modules/gffcompare/gffcompare.nf
+  Script_8981b4922d6fbf1c: /Users/nhoffmann/github/ANNEXA/modules/add_class_code.nf
+  Script_77f56f3661c5c956: /Users/nhoffmann/github/ANNEXA/modules/transforkmers/predict.nf
+  Script_31200c06e310a19c: /Users/nhoffmann/github/ANNEXA/modules/reformat_merged_tools.nf
+  Script_4377cbc71965cdd7: /Users/nhoffmann/github/ANNEXA/modules/restore_biotypes.nf
+  Script_7a054d2d5adcd3cb: /Users/nhoffmann/github/ANNEXA/modules/transdecoder/transdecoder_workflow.nf
+  Script_ce05328ee2a17794: /Users/nhoffmann/github/ANNEXA/modules/feelnc/format.nf
+  Script_741e31d516677eea: /Users/nhoffmann/github/ANNEXA/modules/feelnc/codpot.nf
+  Script_36d5a603797dfd56: /Users/nhoffmann/github/ANNEXA/modules/restrand_novel.nf
+  Script_93e3be56bd177d7a: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_workflow.nf
+  Script_f7ceec5664f344ec: /Users/nhoffmann/github/ANNEXA/modules/stringtie/stringtie_read_length.nf
+oct.-16 10:27:55.340 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+oct.-16 10:27:55.340 [main] DEBUG nextflow.Session - Session await
+oct.-16 10:27:55.478 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:27:55.479 [Task submitter] INFO  nextflow.Session - [55/1a66e9] Submitted process > VALIDATE_INPUT_GTF
+oct.-16 10:28:06.523 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: VALIDATE_INPUT_GTF; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/55/1a66e994989ead720e88f3b2edca0d]
+oct.-16 10:28:06.524 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+oct.-16 10:28:06.528 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:28:06.528 [Task submitter] INFO  nextflow.Session - [f4/2e5305] Submitted process > INDEX_BAM (chr1.bam)
+oct.-16 10:28:10.817 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: INDEX_BAM (chr1.bam); status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/f4/2e5305afb789d469007d95ac274f74]
+oct.-16 10:28:10.822 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:28:10.823 [Task submitter] INFO  nextflow.Session - [f8/b9d59e] Submitted process > BAMBU
+oct.-16 10:29:04.549 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: BAMBU; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/f8/b9d59ef0f9023216aafbe5f123c5cc]
+oct.-16 10:29:04.551 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Process `BAMBU` is unable to find [UnixPath]: `/Users/nhoffmann/Projets/pacbio/run/work/f8/b9d59ef0f9023216aafbe5f123c5cc/extended_annotations.NDR_filter.gtf` (pattern: `extended_annotations.NDR_filter.gtf`)
+oct.-16 10:29:04.602 [TaskFinalizer-3] DEBUG nextflow.processor.TaskProcessor - Process BAMBU > Skipping output binding because one or more optional files are missing: fileoutparam<5>
+oct.-16 10:29:04.611 [TaskFinalizer-3] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+oct.-16 10:29:04.621 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:29:04.621 [Task submitter] INFO  nextflow.Session - [03/b18551] Submitted process > GFFCOMPARE
+oct.-16 10:29:09.077 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: GFFCOMPARE; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/03/b185510e5886bc8e063054861379c4]
+oct.-16 10:29:09.082 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:29:09.082 [Task submitter] INFO  nextflow.Session - [15/4e6320] Submitted process > RESTRAND_ISOFORMS
+oct.-16 10:29:22.512 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: RESTRAND_ISOFORMS; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/15/4e63200a1253f57892a65bf4339a1b]
+oct.-16 10:29:22.523 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:29:22.524 [Task submitter] INFO  nextflow.Session - [2f/d27340] Submitted process > SPLIT_EXTENDED_ANNOTATION
+oct.-16 10:29:23.095 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: SPLIT_EXTENDED_ANNOTATION; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/2f/d27340a2279907d45a6372d1cf19f9]
+oct.-16 10:29:23.109 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:29:23.109 [Task submitter] INFO  nextflow.Session - [c2/c84609] Submitted process > FEELNC_CODPOT
+oct.-16 10:32:55.413 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 7; name: FEELNC_CODPOT; status: RUNNING; exit: -; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/c2/c8460945593c74eafc2adaab294f09]
+oct.-16 10:35:44.601 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: FEELNC_CODPOT; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/c2/c8460945593c74eafc2adaab294f09]
+oct.-16 10:35:44.632 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:35:44.632 [Task submitter] INFO  nextflow.Session - [30/48740d] Submitted process > FEELNC_FORMAT
+oct.-16 10:35:45.330 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: FEELNC_FORMAT; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/30/48740d7af2e8026a3e9283dcc53364]
+oct.-16 10:35:45.341 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:35:45.341 [Task submitter] INFO  nextflow.Session - [fe/d1fe59] Submitted process > RESTORE_BIOTYPE
+oct.-16 10:35:50.960 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: RESTORE_BIOTYPE; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/fe/d1fe59e659d48a27a58f07ac1aa597]
+oct.-16 10:35:50.968 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:35:50.968 [Task submitter] INFO  nextflow.Session - [35/f332a6] Submitted process > MERGE_NOVEL
+oct.-16 10:35:51.534 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: MERGE_NOVEL; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/35/f332a6fc5c8a9ccaef6f79cca7bb0b]
+oct.-16 10:35:51.546 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:35:51.547 [Task submitter] INFO  nextflow.Session - [33/0da147] Submitted process > TRANSDECODER:TRANSDECODER_PREDICT
+oct.-16 10:36:30.178 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: TRANSDECODER:TRANSDECODER_PREDICT; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/33/0da1475f922c386a98e0fc6bc66eba]
+oct.-16 10:36:30.189 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:30.189 [Task submitter] INFO  nextflow.Session - [d2/5d8f75] Submitted process > TRANSDECODER:FORMAT_TRANSDECODER
+oct.-16 10:36:30.864 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: TRANSDECODER:FORMAT_TRANSDECODER; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/d2/5d8f751c42fdf1729ce57eac3697fb]
+oct.-16 10:36:30.876 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:30.876 [Task submitter] INFO  nextflow.Session - [9b/d29d28] Submitted process > TRANSDECODER:AGAT_CONVERTSPGFF2GTF
+oct.-16 10:36:33.246 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: TRANSDECODER:AGAT_CONVERTSPGFF2GTF; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/9b/d29d284e7c48d318df21fb64cb0ad0]
+oct.-16 10:36:33.255 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:33.255 [Task submitter] INFO  nextflow.Session - [ad/7c70b4] Submitted process > TRANSDECODER:GTFSORT
+oct.-16 10:36:33.751 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: TRANSDECODER:GTFSORT; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/ad/7c70b48f65e8837e41db899944d33f]
+oct.-16 10:36:33.805 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:33.805 [Task submitter] INFO  nextflow.Session - [5b/03b468] Submitted process > RESTRAND_NOVEL
+oct.-16 10:36:40.937 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: RESTRAND_NOVEL; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/5b/03b46833a74c1a109deba5b1a77287]
+oct.-16 10:36:40.947 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:40.948 [Task submitter] INFO  nextflow.Session - [66/c9c12f] Submitted process > QC_FULL:MERGE_ANNOTATIONS
+oct.-16 10:36:40.949 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 17; name: ADD_CLASS_CODE (novel.full.gtf); status: NEW; exit: -; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/5d/3e5122a564d13abf961c56d9552908]
+oct.-16 10:36:52.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: QC_FULL:MERGE_ANNOTATIONS; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/66/c9c12fbc7b206f94d31a91ff0af226]
+oct.-16 10:36:52.397 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:36:52.397 [Task submitter] INFO  nextflow.Session - [5d/3e5122] Submitted process > ADD_CLASS_CODE (novel.full.gtf)
+oct.-16 10:37:00.881 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: ADD_CLASS_CODE (novel.full.gtf); status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/5d/3e5122a564d13abf961c56d9552908]
+oct.-16 10:37:00.885 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:37:00.885 [Task submitter] INFO  nextflow.Session - [f0/cfed96] Submitted process > ADD_CLASS_CODE (extended_annotations.full.gtf)
+oct.-16 10:37:45.777 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: ADD_CLASS_CODE (extended_annotations.full.gtf); status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/f0/cfed96a99a41dc78da6eb73431b203]
+oct.-16 10:37:45.783 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+oct.-16 10:37:45.783 [Task submitter] INFO  nextflow.Session - [c5/e93c5d] Submitted process > QC_FULL:REPORT
+oct.-16 10:37:55.454 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 18; name: QC_FULL:REPORT; status: RUNNING; exit: -; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/c5/e93c5def559187395f5de51549201d]
+oct.-16 10:38:11.531 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: QC_FULL:REPORT; status: COMPLETED; exit: 0; error: -; workDir: /Users/nhoffmann/Projets/pacbio/run/work/c5/e93c5def559187395f5de51549201d]
+oct.-16 10:38:11.532 [TaskFinalizer-9] DEBUG nextflow.processor.TaskProcessor - Process `QC_FULL:REPORT` is unable to find [UnixPath]: `/Users/nhoffmann/Projets/pacbio/run/work/c5/e93c5def559187395f5de51549201d/missing_genes.txt` (pattern: `missing_genes.txt`)
+oct.-16 10:38:11.533 [TaskFinalizer-9] DEBUG nextflow.processor.TaskProcessor - Process QC_FULL:REPORT > Skipping output binding because one or more optional files are missing: fileoutparam<4>
+oct.-16 10:38:11.536 [main] DEBUG nextflow.Session - Session await > all processes finished
+oct.-16 10:38:11.638 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+oct.-16 10:38:11.638 [main] DEBUG nextflow.Session - Session await > all barriers passed
+oct.-16 10:38:11.641 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+oct.-16 10:38:11.641 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+oct.-16 10:38:11.648 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=19; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=11m 12s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=2; peakMemory=16 GB; ]
+oct.-16 10:38:11.752 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+oct.-16 10:38:11.799 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-schema@2.0.0'
+oct.-16 10:38:11.799 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-schema
+oct.-16 10:38:11.800 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+oct.-16 10:38:11.800 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
