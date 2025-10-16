@@ -2,9 +2,13 @@ This is an example of running ANNEXA with public data provided by PacBio from hu
 
 # Preparing data
 1. The .bam file was converted back to fastq with [samtools](https://www.htslib.org/) using:
- ```samtools fastq human_80k_Sreads.segmented.bam > human_80k_Sreads.segmented.fastq```
+```
+samtools fastq human_80k_Sreads.segmented.bam > human_80k_Sreads.segmented.fastq
+```
  2. Reads were aligned to the [GRCh38 genome](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/GRCh38.p14.genome.fa.gz) using [minimap2](https://github.com/lh3/minimap2): 
- ```minimap2 -ax splice -k14 -uf -t 4 GRCh38.p14.genome.fa human_80k_Sreads.segmented.fastq > human_80k_Sreads.segmented.fastq.sam```
+```
+minimap2 -ax splice -k14 -uf -t 4 GRCh38.p14.genome.fa human_80k_Sreads.segmented.fastq > human_80k_Sreads.segmented.fastq.sam
+```
  3. The .sam file was converted to .bam and sorted using samtools:
 ```
 samtools view -b -h -O BAM -@ 6 -o human_80k_Sreads.segmented.fastq.bam human_80k_Sreads.segmented.fastq.sam
